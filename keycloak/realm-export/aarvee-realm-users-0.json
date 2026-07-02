@@ -1,0 +1,107 @@
+{
+  "realm" : "aarvee-realm",
+  "users" : [ {
+    "id" : "5b8a94f4-4c55-40cf-a2ff-c3e6f49ed691",
+    "username" : "admin.user",
+    "firstName" : "Admin",
+    "lastName" : "User",
+    "email" : "admin@aarvee.local",
+    "emailVerified" : false,
+    "enabled" : true,
+    "createdTimestamp" : 1782993944250,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "43395615-4112-4e98-8549-5fff9325cdd4",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1782993961474,
+      "secretData" : "{\"value\":\"dUiqlBsEtYy6xFfy5TT3vatwR1ofLyVM6LZIBJQqS5Q=\",\"salt\":\"Snt+pO/5HyCUG6tiHDHJDg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-aarvee-realm", "admin" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "494d34f4-d8c9-4896-8adf-a1fe6723cc6c",
+    "username" : "auditor.user",
+    "emailVerified" : false,
+    "enabled" : true,
+    "createdTimestamp" : 1782994098981,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "a728dcff-5ac4-4eae-95c3-a294e8a415a4",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1782994117827,
+      "secretData" : "{\"value\":\"Sy2SnPkgKvEW4jboypKeekiOD0icam1srknmFgPtIM4=\",\"salt\":\"h0LQlrFZA6KXsc8iQxWCUw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-aarvee-realm", "auditor" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "3d984be6-1aa4-4b7f-b74d-dcaad3b72b42",
+    "username" : "employee.user",
+    "emailVerified" : false,
+    "enabled" : true,
+    "createdTimestamp" : 1782994062400,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "1a941c74-0220-43fb-b892-76bb132bde76",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1782994081334,
+      "secretData" : "{\"value\":\"73E6puXVWwW0bK0CELvYxX3F/KZM3ECoZsuJSknPCeQ=\",\"salt\":\"knZuA59c4Ea1cPR4Gh2S4Q==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-aarvee-realm", "employee" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "c16838d8-48cd-49fe-9ff2-62ad8c0114fa",
+    "username" : "hr.user",
+    "emailVerified" : false,
+    "enabled" : true,
+    "createdTimestamp" : 1782993986132,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "6b1105fd-563d-44b5-b447-c8ac35aab3f1",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1782994005756,
+      "secretData" : "{\"value\":\"9Gd8ZKeXkOjLju8vLxWvKLz4rH/oa6CvRzRBjp0tS30=\",\"salt\":\"VTyivEIDfJyr/WBGg6OMLA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-aarvee-realm", "hr" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "6d8d35f4-a832-40d5-b3d8-8e030f7f4430",
+    "username" : "manager.user",
+    "emailVerified" : false,
+    "enabled" : true,
+    "createdTimestamp" : 1782994025699,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "3361897c-496a-49bb-b1bb-4fd8c7daea75",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1782994045123,
+      "secretData" : "{\"value\":\"9d8lpykavlERWhNczRisEPQfCjJakKUuMiu/qOXBAaE=\",\"salt\":\"ZCc4B98yPLwz36baKFgpMA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-aarvee-realm", "manager" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

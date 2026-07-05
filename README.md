@@ -121,11 +121,10 @@ enterprise-rbac-client
 * Role mapping
 * Realm export
 * Initial documentation
-
-### In Progress
-
 * JWT Validation
 * RBAC Middleware
+
+### In Progress
 * Employee APIs
 * Audit Logging
 
@@ -162,13 +161,18 @@ enterprise-rbac-client
 * Backend folder structure
 * Initial project documentation
 
+### Day 3
+* JWT authentication
+* JWKS integration
+* Token validation
+### Day 4
+* RBAC authorization middleware
+* Protected dashboard endpoint
+* Admin role validation  
+
 ---
 
 ## Upcoming Tasks
-
-* JWT Validation using JWKS
-* verifyToken middleware
-* authorizeRoles middleware
 * Protected REST APIs
 * Employee CRUD APIs
 * Audit Logging

@@ -168,13 +168,25 @@ enterprise-rbac-client
 ### Day 4
 * RBAC authorization middleware
 * Protected dashboard endpoint
-* Admin role validation  
+* Admin role validation
+
+### Day 5
+* Centralized Error Handling
+* Custom AppError
+* Global Error Middleware
+* Update Employee API
+* Employee existence validation
+* Duplicate email validation
+* Required field validation
+* Admin & HR can update employees
+* JWT Authentication
+* Role Authorization
 
 ---
 
 ## Upcoming Tasks
 * Protected REST APIs
-* Employee CRUD APIs
+* Employee DELETE APIs
 * Audit Logging
 * React Integration
 

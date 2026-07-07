@@ -1,5 +1,6 @@
 const employeeRepository = require("./employee.repository");
 const AppError = require("../../utils/AppError");
+const auditService = require("../audit/audit.service");
 
 // ==========================
 // GET ALL EMPLOYEES
@@ -13,7 +14,8 @@ exports.getAllEmployees = async () => {
 // ==========================
 // CREATE EMPLOYEE
 // ==========================
-exports.createEmployee = async (employee) => {
+exports.createEmployee = async (employee,user,
+    ipAddress) => {
 
     // Required Field Validation
 
@@ -49,14 +51,32 @@ exports.createEmployee = async (employee) => {
         );
     }
 
-    return await employeeRepository.createEmployee(employee);
+    const result = await employeeRepository.createEmployee(employee);
+
+await auditService.logAction({
+
+    username: user.preferred_username,
+
+    action: "CREATE",
+
+    resource: "Employee",
+
+    status: "SUCCESS",
+
+    ip_address: ipAddress
+
+});
+return result;
 
 };
 
 // ==========================
 // UPDATE EMPLOYEE
 // ==========================
-exports.updateEmployee = async (employeeId, employee) => {
+exports.updateEmployee = async (employeeId,
+    employee,
+    user,
+    ipAddress) => {
 
     // Check Employee Exists
 
@@ -109,9 +129,48 @@ exports.updateEmployee = async (employeeId, employee) => {
 
     // Update Employee
 
-    return await employeeRepository.updateEmployee(
-        employeeId,
-        employee
-    );
+    return await auditService.logAction({
+    username: user.preferred_username,
+    action: "UPDATE",
+    resource: "Employee",
+    status: "SUCCESS",
+    ip_address: ipAddress
+});
+
+};
+
+exports.deleteEmployee = async (employeeId,
+    user,
+    ipAddress) => {
+
+    console.log("Service Started");
+
+    const employee =
+        await employeeRepository.findEmployeeById(employeeId);
+
+    console.log("Employee Found:", employee);
+
+    if (employee.length === 0) {
+
+        throw new AppError(
+            "Employee not found",
+            404
+        );
+
+    }
+
+    console.log("Calling Repository Delete");
+
+    const result =await auditService.logAction({
+    username: user.preferred_username,
+    action: "DELETE",
+    resource: "Employee",
+    status: "SUCCESS",
+    ip_address:  ipAddress
+});
+
+    console.log("Repository Delete Finished");
+
+    return result;
 
 };

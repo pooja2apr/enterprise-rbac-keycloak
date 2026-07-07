@@ -161,3 +161,44 @@ exports.updateEmployee = (employeeId, employee) => {
     });
 
 };
+
+exports.deleteEmployee = (employeeId) => {
+
+    console.log("Repository Started");
+
+    return new Promise((resolve, reject) => {
+
+        const query = `
+            DELETE FROM employees
+            WHERE employee_id = ?
+        `;
+
+        console.log(query);
+        console.log(employeeId);
+
+        db.query(
+            query,
+            [employeeId],
+            (err, result) => {
+
+                console.log("MySQL Callback Executed");
+
+                if (err) {
+
+                    console.log(err);
+
+                    return reject(err);
+
+                }
+
+                console.log(result);
+
+                resolve(result);
+
+            }
+
+        );
+
+    });
+
+};

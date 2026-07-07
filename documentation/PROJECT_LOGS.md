@@ -90,3 +90,19 @@ Next Steps:
 * Add Audit Logging
 * Create additional Keycloak users (HR, Manager, Employee)
 * Build React frontend with role-based UI
+
+## Day 6 – Employee CRUD & Enterprise Audit Logging
+
+Completed:
+
+* Implemented Delete Employee API
+* Completed Employee CRUD module
+* Built reusable Audit module
+* Created audit_logs table
+* Implemented Audit Repository and Service
+* Integrated audit logging with Create Employee API
+* Integrated audit logging with Update Employee API
+* Integrated audit logging with Delete Employee API
+* Captured authenticated Keycloak username in audit logs
+* Captured client IP address in audit logs
+* Verified audit entries in MySQL

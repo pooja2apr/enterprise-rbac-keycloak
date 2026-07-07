@@ -28,4 +28,11 @@ router.put(
     employeeController.updateEmployee
 );
 
+router.delete(
+    "/:id",
+    verifyToken,
+    authorizeRoles("admin"),
+    employeeController.deleteEmployee
+);
+
 module.exports = router;

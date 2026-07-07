@@ -123,10 +123,11 @@ enterprise-rbac-client
 * Initial documentation
 * JWT Validation
 * RBAC Middleware
+* Employee API
+* Audit Logging
 
 ### In Progress
-* Employee APIs
-* Audit Logging
+* Department module
 
 ### Planned
 

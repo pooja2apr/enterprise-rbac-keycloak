@@ -4,10 +4,29 @@ exports.getAllEmployees = () => {
 
     return new Promise((resolve, reject) => {
 
-        const query = `
-            SELECT *
-            FROM employees
-        `;
+       const query = `
+    SELECT
+
+        e.employee_id,
+        e.first_name,
+        e.last_name,
+        e.email,
+        e.designation,
+        e.status,
+        e.created_at,
+        e.updated_at,
+
+        d.department_id,
+        d.department_name
+
+    FROM employees e
+
+    LEFT JOIN departments d
+
+        ON e.department_id = d.department_id
+
+    ORDER BY e.employee_id
+`;
 
         db.query(query, (err, results) => {
 

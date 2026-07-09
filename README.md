@@ -77,12 +77,41 @@ enterprise-rbac-keycloak/
 
 ## Database Design
 
-Current database contains the following tables:
+Current database consists of the following tables:
 
-* departments
-* employees
-* audit_logs
+| Table | Description |
+|--------|-------------|
+| employees | Stores employee information |
+| departments | Stores department details |
+| audit_logs | Stores security and audit events |
 
+---
+
+## REST APIs
+
+### Dashboard
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/dashboard |
+
+### Employees
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/employees |
+| POST | /api/employees |
+| PUT | /api/employees/:id |
+| DELETE | /api/employees/:id |
+
+### Departments
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/departments |
+| POST | /api/departments |
+| PUT | /api/departments/:id |
+| DELETE | /api/departments/:id |
 ---
 
 ## Keycloak Configuration
@@ -109,38 +138,39 @@ enterprise-rbac-client
 
 ### Completed
 
-* Project initialization
-* GitHub repository
-* Express backend setup
-* MySQL database connection
-* Database schema
-* Keycloak realm configuration
-* Client configuration
-* Role creation
-* User creation
-* Role mapping
-* Realm export
-* Initial documentation
-* JWT Validation
-* RBAC Middleware
-* Employee API
-* Audit Logging
+- Project initialization
+- GitHub repository
+- Express backend setup
+- MySQL database connection
+- Database schema
+- Keycloak realm configuration
+- Client configuration
+- Realm roles
+- Test users
+- JWT Validation using JWKS
+- Role-Based Authorization Middleware
+- Centralized Error Handling
+- Enterprise Audit Logging
+- Employee CRUD APIs
+- Department CRUD APIs
+- Employee & Department Validation
+- Duplicate Email Validation
+- Duplicate Department Validation
+- SQL JOIN (Employee + Department)
 
 ### In Progress
-* Department module
+
+- Dashboard Statistics API
 
 ### Planned
 
-* Dashboard APIs
-* Employee CRUD
-* Protected Routes
-* React Frontend
-* Audit Dashboard
-* API Documentation
-* Architecture Diagrams
-* Medium Article
-* Deployment
-
+- Search & Filtering
+- Pagination
+- React Frontend
+- Keycloak Event Listener SPI
+- API Documentation
+- Architecture Diagrams
+- Deployment
 ---
 
 ## Development Progress
@@ -182,6 +212,29 @@ enterprise-rbac-client
 * Admin & HR can update employees
 * JWT Authentication
 * Role Authorization
+
+### Day 6
+
+- Employee DELETE API
+- Enterprise Audit Logging
+- Dynamic username from JWT
+- Client IP Logging
+- Audit Service Layer
+- Audit Repository
+
+### Day 7
+
+- Department Module
+- Department CRUD APIs
+- Department Validation
+- Duplicate Department Validation
+- Department Audit Logging
+
+### Day 8
+
+- SQL JOIN between Employees and Departments
+- Improved Employee API Response
+- Enterprise Relational Database Design
 
 ---
 

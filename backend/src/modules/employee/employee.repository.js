@@ -1,34 +1,50 @@
 const db = require("../../config/db");
 
-exports.getAllEmployees = () => {
+exports.getAllEmployees = (filters) => {
 
     return new Promise((resolve, reject) => {
 
-       const query = `
-    SELECT
+        let query = `
+            SELECT
+                e.employee_id,
+                e.first_name,
+                e.last_name,
+                e.email,
+                e.designation,
+                e.status,
+                e.created_at,
+                e.updated_at,
+                d.department_id,
+                d.department_name
+            FROM employees e
+            LEFT JOIN departments d
+                ON e.department_id = d.department_id
+            WHERE 1 = 1
+        `;
 
-        e.employee_id,
-        e.first_name,
-        e.last_name,
-        e.email,
-        e.designation,
-        e.status,
-        e.created_at,
-        e.updated_at,
+        const values = [];
 
-        d.department_id,
-        d.department_name
+        // Filter by Status
+        if (filters.status) {
+            query += ` AND e.status = ?`;
+            values.push(filters.status);
+        }
 
-    FROM employees e
+        // Filter by Department Name
+        if (filters.department) {
+            query += ` AND d.department_name = ?`;
+            values.push(filters.department);
+        }
 
-    LEFT JOIN departments d
+        // Filter by Designation
+        if (filters.designation) {
+            query += ` AND e.designation = ?`;
+            values.push(filters.designation);
+        }
 
-        ON e.department_id = d.department_id
+        query += ` ORDER BY e.employee_id`;
 
-    ORDER BY e.employee_id
-`;
-
-        db.query(query, (err, results) => {
+        db.query(query, values, (err, results) => {
 
             if (err) {
                 return reject(err);

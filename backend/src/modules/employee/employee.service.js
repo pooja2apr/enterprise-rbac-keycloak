@@ -5,9 +5,9 @@ const auditService = require("../audit/audit.service");
 // ==========================
 // GET ALL EMPLOYEES
 // ==========================
-exports.getAllEmployees = async () => {
+exports.getAllEmployees = async (filters) => {
 
-    return await employeeRepository.getAllEmployees();
+    return await employeeRepository.getAllEmployees(filters);
 
 };
 

@@ -1,10 +1,17 @@
 const employeeService = require("./employee.service");
 
-exports.getAllEmployees = async (req, res) => {
+exports.getAllEmployees = async (req, res, next) => {
 
     try {
 
-        const employees = await employeeService.getAllEmployees();
+        const filters = {
+            status: req.query.status,
+            department: req.query.department,
+            designation: req.query.designation
+        };
+
+        const employees =
+            await employeeService.getAllEmployees(filters);
 
         res.status(200).json({
             success: true,
@@ -13,17 +20,11 @@ exports.getAllEmployees = async (req, res) => {
 
     } catch (error) {
 
-        console.error(error);
-
-        res.status(500).json({
-            success: false,
-            message: "Failed to fetch employees"
-        });
+        next(error);
 
     }
 
 };
-
 exports.createEmployee = async (req, res, next) => {
 
     try {

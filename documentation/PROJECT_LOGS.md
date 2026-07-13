@@ -106,3 +106,98 @@ Completed:
 * Captured authenticated Keycloak username in audit logs
 * Captured client IP address in audit logs
 * Verified audit entries in MySQL
+
+## Day 7 – Department Module & SQL JOIN
+
+Completed:
+
+### Department Module
+
+* Implemented Department CRUD APIs
+* Created Department Repository layer
+* Created Department Service layer
+* Created Department Controller layer
+* Configured Department Routes
+* Added required field validation
+* Added duplicate department validation
+* Protected Department APIs using RBAC
+
+### Database Enhancements
+
+* Created departments table
+* Established relationship between employees and departments
+* Implemented SQL JOIN between employees and departments
+* Enhanced Employee API to return department details
+* Improved API response for frontend consumption
+
+### Testing
+
+Successfully tested:
+
+* Department Create API
+* Department Update API
+* Department Delete API
+* Department List API
+* Employee API with Department JOIN
+* Authorization using Admin role
+
+---
+
+Next Steps:
+
+* Build Dashboard Statistics API
+* Add Employee Filtering
+* Implement Pagination
+* Start React frontend
+
+## Day 8 – Dashboard & Dynamic Filtering
+
+Completed:
+
+### Dashboard Module
+
+* Implemented Dashboard Repository
+* Implemented Dashboard Service
+* Implemented Dashboard Controller
+* Built Dashboard Statistics API
+* Added employee count using SQL COUNT()
+* Added active employee count
+* Added inactive employee count
+* Added department count
+
+### Employee Filtering
+
+* Implemented dynamic employee filtering
+* Added filtering by status
+* Added filtering by department
+* Added filtering by designation
+* Built dynamic SQL query generation
+* Used parameterized queries to prevent SQL injection
+* Learned dynamic WHERE clause construction using `WHERE 1 = 1`
+
+### Architecture
+
+* Maintained Controller → Service → Repository architecture
+* Kept business logic in Service layer
+* Kept SQL logic in Repository layer
+
+### Testing
+
+Successfully tested:
+
+* Dashboard Statistics API
+* Employee filtering by status
+* Employee filtering by department
+* Employee filtering by designation
+* Combined filters
+* SQL JOIN with filters
+
+---
+
+Next Steps:
+
+* Build React frontend
+* Integrate Keycloak Login
+* Connect Dashboard APIs
+* Build Employee Management UI
+* Build Department Management UI

@@ -52,11 +52,11 @@ The client represents the Enterprise RBAC application within Keycloak.
 
 | Property                        | Value                   |
 | ------------------------------- | ----------------------- |
-| Root URL                        | http://localhost:3000   |
-| Home URL                        | http://localhost:3000   |
-| Valid Redirect URIs             | http://localhost:3000/* |
-| Valid Post Logout Redirect URIs | http://localhost:3000/* |
-| Web Origins                     | http://localhost:3000   |
+| Root URL                        | http://localhost:5173  |
+| Home URL                        | http://localhost:5173   |
+| Valid Redirect URIs             | http://localhost:5173/* |
+| Valid Post Logout Redirect URIs | http://localhost:5173/* |
+| Web Origins                     | +  |
 
 Purpose:
 

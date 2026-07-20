@@ -193,11 +193,77 @@ Successfully tested:
 * SQL JOIN with filters
 
 ---
+## Day 9 – React Frontend Integration & Role-Based Employee Management
+
+Completed:
+
+### React Frontend
+
+* Initialized React application using Vite
+* Configured React Router
+* Created application structure
+* Implemented Dashboard page
+* Implemented Employees page
+* Implemented Departments page
+* Built reusable Navbar component
+
+### Keycloak Integration
+
+* Configured React Keycloak Provider
+* Integrated Keycloak authentication
+* Implemented secure login
+* Implemented logout functionality
+* Protected React application using Keycloak
+* Displayed authenticated username
+* Displayed authenticated email
+* Displayed assigned realm roles
+
+### Axios Integration
+
+* Created reusable Axios instance
+* Automatically attached JWT access token to every API request
+* Connected React frontend with protected backend APIs
+
+### Employee Management UI
+
+* Displayed employee list from backend API
+* Implemented Create Employee form
+* Connected Create Employee API
+* Implemented Edit Employee form
+* Connected Update Employee API
+* Implemented Delete Employee functionality
+* Automatically refreshed employee list after Create, Update and Delete operations
+
+### Role-Based UI
+
+* Displayed Create Employee button only for Admin and HR roles
+* Displayed Edit button only for Admin and HR roles
+* Displayed Delete button only for Admin role
+* Restricted frontend actions based on Keycloak roles
+
+### Testing
+
+Successfully tested:
+
+* Keycloak Login
+* JWT Authentication
+* Protected React Routes
+* Employee List API
+* Employee Create
+* Employee Update
+* Employee Delete
+* Role-Based UI
+* React to Backend Integration
+* Audit Logging
+
+---
 
 Next Steps:
 
-* Build React frontend
-* Integrate Keycloak Login
-* Connect Dashboard APIs
-* Build Employee Management UI
-* Build Department Management UI
+* Department Management UI
+* Audit Log UI
+* Dashboard Statistics Integration
+* Employee Search & Pagination
+* Improve UI Styling
+* Update GitHub Documentation
+* Publish Medium Article

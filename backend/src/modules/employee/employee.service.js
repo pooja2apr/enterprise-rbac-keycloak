@@ -129,7 +129,16 @@ exports.updateEmployee = async (employeeId,
 
     // Update Employee
 
-    return await auditService.logAction({
+    // Update Employee
+
+const result = await employeeRepository.updateEmployee(
+    employeeId,
+    employee
+);
+
+// Write Audit Log
+
+await auditService.logAction({
     username: user.preferred_username,
     action: "UPDATE",
     resource: "Employee",
@@ -137,11 +146,15 @@ exports.updateEmployee = async (employeeId,
     ip_address: ipAddress
 });
 
+return result;
+
 };
 
-exports.deleteEmployee = async (employeeId,
+exports.deleteEmployee = async (
+    employeeId,
     user,
-    ipAddress) => {
+    ipAddress
+) => {
 
     console.log("Service Started");
 
@@ -161,15 +174,18 @@ exports.deleteEmployee = async (employeeId,
 
     console.log("Calling Repository Delete");
 
-    const result =await auditService.logAction({
-    username: user.preferred_username,
-    action: "DELETE",
-    resource: "Employee",
-    status: "SUCCESS",
-    ip_address:  ipAddress
-});
+    const result =
+        await employeeRepository.deleteEmployee(employeeId);
 
     console.log("Repository Delete Finished");
+
+    await auditService.logAction({
+        username: user.preferred_username,
+        action: "DELETE",
+        resource: "Employee",
+        status: "SUCCESS",
+        ip_address: ipAddress
+    });
 
     return result;
 

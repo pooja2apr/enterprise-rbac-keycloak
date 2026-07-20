@@ -2,250 +2,230 @@
 
 ## Overview
 
-This project demonstrates an enterprise-grade Role-Based Access Control (RBAC) system using Keycloak for authentication and authorization.
+This project demonstrates an enterprise-grade Role-Based Access Control (RBAC) application built using Keycloak, Node.js, Express.js, React, and MySQL.
 
-The application follows modern Identity and Access Management (IAM) practices by implementing secure authentication with OpenID Connect (OIDC), JSON Web Tokens (JWT), and role-based authorization.
+The application follows modern Identity and Access Management (IAM) practices by implementing secure authentication using OpenID Connect (OIDC), JWT validation, role-based authorization, audit logging, and a React frontend integrated with protected REST APIs.
 
-This project is being developed as a portfolio project to demonstrate enterprise IAM architecture, secure backend development, and best practices.
-
----
-
-## Technology Stack
-
-### Backend
-
-* Node.js
-* Express.js
-* MySQL
-* JWT
-* JWKS
-* Keycloak
-
-### Frontend
-
-* React (Coming Soon)
-
-### Identity & Security
-
-* Keycloak
-* OAuth 2.0
-* OpenID Connect (OIDC)
-* Role-Based Access Control (RBAC)
-
-### Tools
-
-* Git
-* GitHub
-* Postman
-* VS Code
+This project is being developed as a portfolio project to demonstrate enterprise IAM architecture, secure backend development, frontend integration, and clean layered architecture.
 
 ---
 
-## Project Structure
+# Technology Stack
 
-```text
-enterprise-rbac-keycloak/
-│
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── middleware/
-│   │   ├── modules/
-│   │   │   ├── employee/
-│   │   │   ├── dashboard/
-│   │   │   └── audit/
-│   │   ├── utils/
-│   │   ├── app.js
-│   │   └── server.js
-│   │
-│   ├── package.json
-│   └── .env
-│
-├── database/
-├── diagrams/
-├── docs/
-├── frontend/
-├── keycloak/
-│   ├── realm-export/
-│   └── screenshots/
-├── postman/
-├── screenshots/
-└── README.md
+## Backend
+
+- Node.js
+- Express.js
+- MySQL
+
+## Frontend
+
+- React
+- React Router
+- Axios
+- Vite
+
+## Identity & Security
+
+- Keycloak
+- OAuth 2.0
+- OpenID Connect (OIDC)
+- JWT
+- JWKS
+- Role-Based Access Control (RBAC)
+
+## Tools
+
+- Git
+- GitHub
+- Postman
+- VS Code
+
+---
+
+# Project Architecture
+
+```
+React Frontend
+       │
+React Router
+       │
+Axios + JWT
+       │
+Express REST APIs
+       │
+Controller
+       │
+Service
+       │
+Repository
+       │
+MySQL Database
 ```
 
 ---
 
-## Database Design
+# Project Structure
 
-Current database consists of the following tables:
+```text
+enterprise-rbac-keycloak/
 
-| Table | Description |
-|--------|-------------|
-| employees | Stores employee information |
-| departments | Stores department details |
-| audit_logs | Stores security and audit events |
-
----
-
-## REST APIs
-
-### Dashboard
-
-| Method | Endpoint |
-|---------|----------|
-| GET | /api/dashboard |
-
-### Employees
-
-| Method | Endpoint |
-|---------|----------|
-| GET | /api/employees |
-| POST | /api/employees |
-| PUT | /api/employees/:id |
-| DELETE | /api/employees/:id |
-
-### Departments
-
-| Method | Endpoint |
-|---------|----------|
-| GET | /api/departments |
-| POST | /api/departments |
-| PUT | /api/departments/:id |
-| DELETE | /api/departments/:id |
----
-
-## Keycloak Configuration
-
-### Realm
-
-aarvee-realm
-
-### Client
-
-enterprise-rbac-client
-
-### Roles
-
-* admin
-* hr
-* manager
-* employee
-* auditor
+backend/
+│
+├── src/
+│   ├── config/
+│   ├── middleware/
+│   ├── modules/
+│   │   ├── employee/
+│   │   ├── department/
+│   │   ├── dashboard/
+│   │   └── audit/
+│   ├── utils/
+│   ├── app.js
+│   └── server.js
+│
+frontend/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   └── keycloak.js
+│
+database/
+docs/
+diagrams/
+keycloak/
+postman/
+README.md
+```
 
 ---
 
-## Features
+# Features
 
-### Completed
+## Authentication
 
-- Project initialization
-- GitHub repository
-- Express backend setup
-- MySQL database connection
-- Database schema
-- Keycloak realm configuration
-- Client configuration
-- Realm roles
-- Test users
-- JWT Validation using JWKS
-- Role-Based Authorization Middleware
-- Centralized Error Handling
-- Enterprise Audit Logging
-- Employee CRUD APIs
-- Department CRUD APIs
-- Employee & Department Validation
-- Duplicate Email Validation
-- Duplicate Department Validation
-- SQL JOIN (Employee + Department)
+- Keycloak Login
+- OpenID Connect (OIDC)
+- JWT Authentication
+- Logout
 
-### In Progress
+## Authorization
 
-- Dashboard Statistics API
+- Role-Based Access Control (RBAC)
+- Admin
+- HR
+- Manager
+- Employee
+- Auditor
 
-### Planned
+## Employee Management
 
-- Search & Filtering
-- Pagination
-- React Frontend
-- Keycloak Event Listener SPI
-- API Documentation
-- Architecture Diagrams
-- Deployment
----
+- View Employees
+- Create Employee
+- Update Employee
+- Delete Employee
 
-## Development Progress
+## Dashboard
 
-### Day 1
+- Dashboard API
+- Employee Count
+- Department Count
+- Active Employee Count
 
-* Keycloak installation and configuration
-* Realm creation
-* Client creation
-* Roles and users
-* Realm export
-* Screenshots
+## Audit Logging
 
-### Day 2
-
-* Backend initialization
-* MySQL connection
-* Database schema
-* Backend folder structure
-* Initial project documentation
-
-### Day 3
-* JWT authentication
-* JWKS integration
-* Token validation
-### Day 4
-* RBAC authorization middleware
-* Protected dashboard endpoint
-* Admin role validation
-
-### Day 5
-* Centralized Error Handling
-* Custom AppError
-* Global Error Middleware
-* Update Employee API
-* Employee existence validation
-* Duplicate email validation
-* Required field validation
-* Admin & HR can update employees
-* JWT Authentication
-* Role Authorization
-
-### Day 6
-
-- Employee DELETE API
-- Enterprise Audit Logging
-- Dynamic username from JWT
+- Create Audit Log
+- Update Audit Log
+- Delete Audit Log
+- Username Logging
 - Client IP Logging
-- Audit Service Layer
-- Audit Repository
 
-### Day 7
+## Frontend
 
-- Department Module
-- Department CRUD APIs
-- Department Validation
-- Duplicate Department Validation
-- Department Audit Logging
-
-### Day 8
-
-- SQL JOIN between Employees and Departments
-- Improved Employee API Response
-- Enterprise Relational Database Design
+- React Router
+- Protected Routes
+- Axios Integration
+- Keycloak Integration
+- Role-Based UI
 
 ---
 
-## Upcoming Tasks
-* Protected REST APIs
-* Employee DELETE APIs
-* Audit Logging
-* React Integration
+# Database
+
+Current tables:
+
+- departments
+- employees
+- audit_logs
 
 ---
 
-## License
+# Keycloak Configuration
+
+Realm
+
+- aarvee-realm
+
+Client
+
+- enterprise-rbac-client
+
+Roles
+
+- admin
+- hr
+- manager
+- employee
+- auditor
+
+---
+
+# Development Progress
+
+## Completed
+
+### Backend
+
+- Express.js Backend
+- MySQL Integration
+- Layered Architecture
+- Global Error Handling
+- JWT Validation
+- JWKS Integration
+- RBAC Middleware
+- Employee CRUD APIs
+- Department APIs
+- Dashboard APIs
+- Audit Logging
+
+### Frontend
+
+- React Setup
+- React Router
+- Keycloak Integration
+- Protected Routes
+- Axios Authentication
+- Employee CRUD
+- Role-Based UI
+
+---
+
+# Upcoming Features
+
+- Audit Log UI
+- Department CRUD
+- Search & Pagination
+- Dashboard Charts
+- Responsive UI
+- Docker Support
+- Deployment
+
+---
+
+# License
 
 This project is developed for educational and portfolio purposes.
